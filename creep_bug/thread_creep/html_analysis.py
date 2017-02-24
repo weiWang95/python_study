@@ -25,8 +25,8 @@ def save_file(file_url):
   # urllib.urlretrieve(file_url, file_name)
   try:
     urllib.urlretrieve(file_url, file_name)
-  except Exception:
-    print('Error: file -> %s download failed!!!' % (file_name))
+  except Exception, e:
+    print('Error: file -> %s download failed!!! \n message -> %s' % (file_name, e.reason))
     return False
   else:
     print('%s download %s success !!!' % (t.name, file_url))
